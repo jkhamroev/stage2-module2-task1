@@ -28,11 +28,13 @@ public class AddUserServlet extends HttpServlet {
         try {
             String firstName = request.getParameter("firstName");
             String lastName = request.getParameter("lastName");
-            User user = new User(firstName, lastName);
-            Warehouse.getInstance().addUser(new User(firstName, lastName));
-            request.setAttribute("user", user);
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/add.jsp");
-            requestDispatcher.forward(request, response);
+            if (firstName != null && lastName != null) {
+                User user = new User(firstName, lastName);
+                Warehouse.getInstance().addUser(new User(firstName, lastName));
+                request.setAttribute("user", user);
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/add.jsp");
+                requestDispatcher.forward(request, response);
+            }
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
