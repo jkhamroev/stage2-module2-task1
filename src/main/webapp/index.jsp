@@ -3,6 +3,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>INDEX</title>
 </head>
 <body>
 <div class="w3-container w3-center">
