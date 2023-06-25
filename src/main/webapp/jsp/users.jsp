@@ -3,12 +3,13 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <!DOCTYPE html>
+<html lang="EN" xml:lang="en">
+<body>
 <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <title>USERS</title>
 </head>
-<body>
 <div style="margin-left:10px; margin-top:5px;">
     <div class="w3-container ">
         <h2 class="title w3-text-black">Users</h2>
@@ -29,5 +30,4 @@
     </div>
 </div>
 </body>
-<html lang="EN" xml:lang="en">
 </html>

@@ -15,9 +15,8 @@ import java.io.IOException;
 public class AddUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/add.jsp");
         try {
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/add.jsp");
             requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace();
@@ -26,15 +25,13 @@ public class AddUserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
-        if (firstName != null && lastName != null) {
-            User user = new User(firstName, lastName);
-            request.setAttribute("user", user);
-            Warehouse.getInstance().addUser(new User(firstName, lastName));
-        }
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/add.jsp");
         try {
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
+            User user = new User(firstName, lastName);
+            Warehouse.getInstance().addUser(new User(firstName, lastName));
+            request.setAttribute("user", user);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/add.jsp");
             requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace();

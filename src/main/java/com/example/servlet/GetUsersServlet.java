@@ -15,10 +15,10 @@ public class GetUsersServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-        Warehouse warehouse = Warehouse.getInstance();
-        request.setAttribute("users", warehouse.getUsers());
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/users.jsp");
         try {
+            Warehouse warehouse = Warehouse.getInstance();
+            request.setAttribute("users", warehouse.getUsers());
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/users.jsp");
             requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace();
