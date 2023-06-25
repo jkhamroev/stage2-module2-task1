@@ -28,7 +28,7 @@ public class AddUserServlet extends HttpServlet {
         try {
             String firstName = request.getParameter("firstName");
             String lastName = request.getParameter("lastName");
-            if (firstName != null && lastName != null) {
+            if (firstName != null && !firstName.isEmpty() && lastName != null && !lastName.isEmpty()) {
                 User user = new User(firstName, lastName);
                 Warehouse.getInstance().addUser(new User(firstName, lastName));
                 request.setAttribute("user", user);
