@@ -29,6 +29,8 @@ public class AddUserServlet extends HttpServlet {
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         if (firstName != null && lastName != null) {
+            User user = new User(firstName, lastName);
+            request.setAttribute("user", user);
             Warehouse.getInstance().addUser(new User(firstName, lastName));
         }
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp/add.jsp");
